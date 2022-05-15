@@ -1,0 +1,4 @@
+landscapes_env/
+.git/
+.ipynb_checkpoints/
+.gitignore
