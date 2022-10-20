@@ -1,5 +1,4 @@
-This repository contains code to train and analyse speaker landscape as introduced in *Speaker landscapes: Machine learning opens a window on the everyday language of opinion* by 
-Maria Schuld, Kevin Durrheim, Martin Mafunda and Sindi Mazibuko (`2022 <https://osf.io/smhn5/>`_).
+This repository contains code to train and analyse speaker landscapes, which are spatial representations of agents such that the distance between two agents represents their similarity in speech according to a data corpus.
 
 Environment setup
 --------------------
