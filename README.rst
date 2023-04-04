@@ -4,7 +4,7 @@ Speaker landscapes are a kind of user embedding, or a spatial representation of 
 
 The main folder shows how to create and analyse speaker landscapes using dummy datasets to highlight the kind of datastructures that are inputs and outputs to the code. The real dataset are available on request, subject to the data owner's permission. 
 
-The two word embeddings studied in the paper can be found in the "case_studies" folder. The speaker tokens are marked by the prefix "agent_" (such as "agent_zuma". 
+The two word embeddings studied in the paper can be found in the "case_studies" folder. The speaker tokens are marked by the prefix ``agent_``. 
 
 How to train and use speaker landscapes
 ---------------------------------------
