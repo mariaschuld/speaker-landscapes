@@ -1,5 +1,13 @@
-This repository contains code to train and analyse speaker landscape as introduced in *Speaker landscapes: Machine learning opens a window on the everyday language of opinion* by 
-Maria Schuld, Kevin Durrheim, Martin Mafunda and Sindi Mazibuko (`2022 <https://osf.io/smhn5/>`_).
+This repository contains code to supplement the paper "Speaker Landscapes: Machine Learning Opens a Window on the Everyday Language of Opinion".
+
+Speaker landscapes are a kind of user embedding, or a spatial representation of speakers by vectors such that the distance between two speaker vectors represent the similarity of their speech samples from a data corpus. The basic trick of retrieving a speaker landscape is to annotate data of speech samples with a token representing the speaker.
+
+The main folder shows how to train and analyse speaker landscapes using dummy datasets to highlight the kind of datastructures that are read in and created. 
+
+The two word embeddings studied in the paper can be found in the "case_studies" folder, together with a notebook showcasing how to load them.
+
+
+How to train and use speaker landscapes
 
 Environment setup
 --------------------
@@ -7,7 +15,7 @@ Environment setup
 Install all packages from the ``requirements.txt`` file into a fresh python environment and activate the environment, so that the notebooks have access to the packages.
 
 1. Providing the data
----------------------
+*********************
 
 Save your raw data as a json lines file (.jl) in the main folder where the notebooks are located. The file has to be named ``raw_data.jl`` and has the following structure:
 
@@ -23,7 +31,7 @@ Each line represents one text quote by an author. Authors with multiple quotes i
 Each line contains a python dictionary whith (at least) two string keys, ``"author"`` and ``"text"``. The expressions in the brakets <> contain the specific data you are providing.
 
 2. Pre-processing the data
---------------------------
+**************************
 
 Open the ``clean_data.ipynb`` notebook and run all cells in consecutive order.
 
@@ -42,7 +50,7 @@ The quote text is cleaned as follows:
 * form expressions of up to 4-grams when words are used in the same order more than 70 times,
 
 3. Training the word embedding
-------------------------------
+******************************
 
 Open the ``train_embedding.ipynb`` notebook and run all cells in consecutive order.
 
@@ -53,7 +61,7 @@ Note: Since we use multiple workers for training, each training may result in a 
 
 
 4. Extract information for the speaker landscape
-------------------------------------------------
+************************************************
 
 The speaker landscape consists of all word-vector pairs in the trained embedding that are prepended by ``"agent_"``. These words are the speaker tokens, while the vectors are their coordinates in a 250 dimensional space. To visualise the landscape, one can reduce the 250 to 2 dimensions. 
 
@@ -64,15 +72,11 @@ This creates a new file ``landscape_info.pkl`` which stores a pandas `DataFrame 
 Another file, ``annotations_info.pkl`` contains the word, vector, and reduced vector representation of desired annotation words, which are selected from the embeddings vocabulary. 
 
 5. Plot and analyse the speaker landscape
------------------------------------------
+*****************************************
 
 The ``analyse_landscape.ipynb`` notebook shows techniques used in the main paper to analyse and visualise the landscape, including:
 
 * Plotting an annotated landscape
-* Finding tweets posted by speakers located in a certain region
 * Projecting to list of anger words
 * Counting the tweet length
 * Counting emojis
-
-
-
