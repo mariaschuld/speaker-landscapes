@@ -1,16 +1,16 @@
 This repository contains code to supplement the paper "Speaker Landscapes: Machine Learning Opens a Window on the Everyday Language of Opinion".
 
-Speaker landscapes are a kind of user embedding, or a spatial representation of speakers by vectors such that the distance between two speaker vectors represent the similarity of their speech samples from a data corpus. The basic trick of retrieving a speaker landscape is to annotate data of speech samples with a token representing the speaker.
+Speaker landscapes are a kind of user embedding, or a spatial representation of speakers by vectors such that the proximity between two speaker vectors is a measure for the similarity of their speech samples from a data corpus. The basic trick of constructing a speaker landscape is to annotate data of speech samples with a token representing the speaker and then training a word embedding.
 
-The main folder shows how to train and analyse speaker landscapes using dummy datasets to highlight the kind of datastructures that are read in and created. 
+The main folder shows how to create and analyse speaker landscapes using dummy datasets to highlight the kind of datastructures that are inputs and outputs to the code. The real dataset are available on request, subject to the data owner's permission. 
 
-The two word embeddings studied in the paper can be found in the "case_studies" folder, together with a notebook showcasing how to load them.
-
+The two word embeddings studied in the paper can be found in the "case_studies" folder. The speaker tokens are marked by the prefix "agent_" (such as "agent_zuma". 
 
 How to train and use speaker landscapes
+---------------------------------------
 
 Environment setup
---------------------
+*****************
 
 Install all packages from the ``requirements.txt`` file into a fresh python environment and activate the environment, so that the notebooks have access to the packages.
 
